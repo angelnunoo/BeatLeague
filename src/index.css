@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Syne", "Segoe UI", sans-serif;
+  --font-sans: "Outfit", "Segoe UI", sans-serif;
+  --color-ink: #0f0f0f;
+  --color-panel: #171717;
+  --color-panel-2: #212121;
+  --color-line: #2e2e2e;
+  --color-muted: #c8c8c8;
+  --color-faint: #8d8d8d;
+  --color-spotify: #1db954;
+  --color-gold: #e7c36a;
+  --color-danger: #ff5a7a;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: white;
+  background:
+    radial-gradient(900px 420px at 50% -12%, rgba(29, 185, 84, 0.18), transparent 55%),
+    radial-gradient(700px 380px at 100% 0%, rgba(231, 195, 106, 0.08), transparent 42%),
+    var(--color-ink);
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-spotify);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgba(29, 185, 84, 0.35);
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+.rise {
+  animation: rise 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.pop {
+  animation: pop 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.shake {
+  animation: shake 0.4s ease;
+}
+
+.shimmer {
+  background-image: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.22) 48%, transparent 62%);
+  background-size: 220% 100%;
+  animation: shimmer 2.8s linear infinite;
+}
+
+.bar-fill {
+  transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wave span {
+  transform-origin: center bottom;
+  animation: wave 0.9s ease-in-out infinite;
+}
+
+.pulse-ring {
+  animation: pulse-ring 1.8s ease-out infinite;
+}
+
+.hide-scroll {
+  scrollbar-width: none;
+}
+
+.hide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.86);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

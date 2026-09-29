@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BeatLeague">
+  <rect width="64" height="64" rx="16" fill="#0F0F0F"/>
+  <path d="M18 40V24l14 8-14 8z" fill="#1DB954"/>
+  <path d="M36 22c6 3 10 8 10 14s-4 11-10 14" fill="none" stroke="#1DB954" stroke-width="3" stroke-linecap="round"/>
+</svg>
